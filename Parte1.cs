@@ -60,6 +60,63 @@ public class Inventario
         {
             Console.WriteLine($"Producto: {producto.Nombre}, Precio: {producto.Precio}, Cantidad: {producto.Cantidad}");
         }
+        public class MenuInventario
+{
+    public static void MostrarMenu()
+    {
+        Inventario inventario = new Inventario();
+
+        // Menú de opciones
+        while (true)
+        {
+            Console.WriteLine("\nOpciones:");
+            Console.WriteLine("1. Agregar producto");
+            Console.WriteLine("2. Actualizar stock");
+            Console.WriteLine("3. Calcular valor total del inventario");
+            Console.WriteLine("4. Mostrar inventario");
+            Console.WriteLine("5. Salir");
+            Console.Write("Seleccione una opción: ");
+            int opcion = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.Write("Ingrese el nombre del producto: ");
+                    string nombre = Console.ReadLine();
+                    Console.Write("Ingrese el precio del producto: ");
+                    double precio = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Ingrese la cantidad del producto: ");
+                    int cantidad = Convert.ToInt32(Console.ReadLine());
+                    inventario.AgregarProducto(nombre, precio, cantidad);
+                    break;
+
+                case 2:
+                    Console.Write("Ingrese el nombre del producto a actualizar: ");
+                    nombre = Console.ReadLine();
+                    Console.Write("Ingrese la nueva cantidad: ");
+                    int nuevaCantidad = Convert.ToInt32(Console.ReadLine());
+                    inventario.ActualizarStock(nombre, nuevaCantidad);
+                    break;
+
+                case 3:
+                    double valorTotal = inventario.CalcularValorTotal();
+                    Console.WriteLine($"El valor total del inventario es: {valorTotal}");
+                    break;
+
+                case 4:
+                    inventario.MostrarInventario();
+                    break;
+
+                case 5:
+                    return;
+
+                default:
+                    Console.WriteLine("Opción no válida.");
+                    break;
+            }
+        }
+    }
+}
     }
 }
 
