@@ -45,6 +45,7 @@ public class Inventario
         foreach (Producto producto in productos)
         {
             Console.WriteLine($"Producto: {producto.Nombre}, Precio: {producto.Precio}, Cantidad: {producto.Cantidad}");
+            .
         }
     }
 }
