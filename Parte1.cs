@@ -60,12 +60,15 @@ public class Inventario
         {
             Console.WriteLine($"Producto: {producto.Nombre}, Precio: {producto.Precio}, Cantidad: {producto.Cantidad}");
         }
-        public class MenuInventario
+    }
+}
+
+public class Program
 {
-    public static void MostrarMenu()
+    public static void Main(string[] args)
     {
         Inventario inventario = new Inventario();
-
+        
         // Menú de opciones
         while (true)
         {
@@ -117,13 +120,3 @@ public class Inventario
         }
     }
 }
-    }
-    public class Program
-{
-    public static void Main(string[] args)
-    {
-        MenuInventario.MostrarMenu();
-    }
-}
-}
-
