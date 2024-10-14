@@ -1,5 +1,19 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+
+public class Producto
+{
+    public string Nombre { get; set; }
+    public double Precio { get; set; }
+    public int Cantidad { get; set; }
+
+    public Producto(string nombre, double precio, int cantidad)
+    {
+        Nombre = nombre;
+        Precio = precio;
+        Cantidad = cantidad;
+    }
+}
 
 public class Inventario
 {
@@ -45,7 +59,7 @@ public class Inventario
         foreach (Producto producto in productos)
         {
             Console.WriteLine($"Producto: {producto.Nombre}, Precio: {producto.Precio}, Cantidad: {producto.Cantidad}");
-            .
         }
     }
 }
+
