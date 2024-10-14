@@ -118,5 +118,12 @@ public class Inventario
     }
 }
     }
+    public class Program
+{
+    public static void Main(string[] args)
+    {
+        MenuInventario.MostrarMenu();
+    }
+}
 }
 
